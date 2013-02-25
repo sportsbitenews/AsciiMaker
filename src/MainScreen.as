@@ -50,7 +50,7 @@ package
 				}
 				
 				terminal.write(" Foreground:", charGuiX, charFgY);
-				terminal.write("RGB:", charGuiX, charFgY + 2);
+				terminal.write("RGB:", charGuiX, charBgY + 2);
 				terminal.write(fgR.toString(), charGuiX + 5, charFgY + 2, 0xffffff, clickableBg);
 				terminal.write(fgG.toString(), charGuiX + 9, charFgY + 2, 0xffffff, clickableBg);
 				terminal.write(fgB.toString(), charGuiX + 13, charFgY + 2, 0xffffff, clickableBg);
