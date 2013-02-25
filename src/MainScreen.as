@@ -39,7 +39,7 @@ package
 					terminal.write(chars[x][y], x, y, fg[x][y], bg[x][y]);
 				
 				terminal.write(" Ascii: " + String.fromCharCode(currentCharCode) + " (   )", charGuiX, charGuiY - 2);
-				terminal.write(currentCharCode.toString(), charGuiX + 11, charGuiY - 2, 0xffffff, clickableBg);
+				terminal.write(pad3(currentCharCode.toString()), charGuiX + 11, charGuiY - 2, 0xffffff, clickableBg);
 				
 				for (var x:int = 0; x < 16; x++)
 				for (var y:int = 0; y < 16; y++)
@@ -51,16 +51,16 @@ package
 				
 				terminal.write(" Foreground:", charGuiX, charFgY);
 				terminal.write("RGB:", charGuiX, charBgY + 2);
-				terminal.write(fgR.toString(), charGuiX + 5, charFgY + 2, 0xffffff, clickableBg);
-				terminal.write(fgG.toString(), charGuiX + 9, charFgY + 2, 0xffffff, clickableBg);
-				terminal.write(fgB.toString(), charGuiX + 13, charFgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(fgR.toString()), charGuiX + 5, charFgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(fgG.toString()), charGuiX + 9, charFgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(fgB.toString()), charGuiX + 13, charFgY + 2, 0xffffff, clickableBg);
 				
 				
 				terminal.write(" Background:", charGuiX, charBgY);
 				terminal.write("RGB:", charGuiX, charFgY + 2);
-				terminal.write(bgR.toString(), charGuiX + 5, charBgY + 2, 0xffffff, clickableBg);
-				terminal.write(bgG.toString(), charGuiX + 9, charBgY + 2, 0xffffff, clickableBg);
-				terminal.write(bgB.toString(), charGuiX + 13, charBgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(bgR.toString()), charGuiX + 5, charBgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(bgG.toString()), charGuiX + 9, charBgY + 2, 0xffffff, clickableBg);
+				terminal.write(pad3(bgB.toString()), charGuiX + 13, charBgY + 2, 0xffffff, clickableBg);
 			});
 		}
 		
@@ -84,6 +84,11 @@ package
 				fg.push(fgRow);
 				bg.push(bgRow);
 			}
+		}
+		
+		public function pad3(text:String):String
+		{
+			return ("   " + text).substr(text.length, 3);
 		}
 		
 		public function onMove():void
