@@ -50,6 +50,7 @@ package
 				}
 				
 				terminal.write(" Foreground:", charGuiX, charFgY);
+				terminal.write(" ", charGuiX + 13, charFgY, 0xff000000, (0xff000000 | (fgR << 16) | (fgG << 8) | fgB));
 				terminal.write("RGB:", charGuiX, charBgY + 2);
 				terminal.write(pad3(fgR.toString()), charGuiX + 5, charFgY + 2, 0xffffff, clickableBg);
 				terminal.write(pad3(fgG.toString()), charGuiX + 9, charFgY + 2, 0xffffff, clickableBg);
@@ -57,6 +58,7 @@ package
 				
 				
 				terminal.write(" Background:", charGuiX, charBgY);
+				terminal.write(" ", charGuiX + 13, charBgY, 0xff000000, (0xff000000 | (bgR << 16) | (bgG << 8) | bgB));
 				terminal.write("RGB:", charGuiX, charFgY + 2);
 				terminal.write(pad3(bgR.toString()), charGuiX + 5, charBgY + 2, 0xffffff, clickableBg);
 				terminal.write(pad3(bgG.toString()), charGuiX + 9, charBgY + 2, 0xffffff, clickableBg);
